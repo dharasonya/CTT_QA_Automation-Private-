@@ -22,12 +22,12 @@ class BaseSetupSteps:
             raise ValueError(f"Invalid JSON format in config file: {config_file}")
 
         self.browser = config.get("browser", "chrome").lower()
-        self.driver_path = config.get("driver_path", "")
+        self.chrome_driver_path = config.get("driver_path", "")
         self.url = config.get("url", "")
 
         # Debugging print statements
         print(f"Browser: {self.browser}")
-        print(f"Driver Path: {self.driver_path}")
+        print(f"Driver Path: {self.chrome_driver_path}")
         print(f"URL: {self.url}")
 
         # Ensure URL is valid before proceeding
@@ -35,7 +35,7 @@ class BaseSetupSteps:
             raise ValueError("URL is missing in the configuration file.")
 
         # Setup WebDriver
-        self.driver = self.setup_browser(self.browser, self.driver_path)
+        self.driver = self.setup_browser(self.browser, self.chrome_driver_path)
         self.driver.maximize_window()  # Maximize the browser window
         self.open_url(self.url)
 

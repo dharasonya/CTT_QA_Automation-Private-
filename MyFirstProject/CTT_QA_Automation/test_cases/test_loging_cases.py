@@ -4,10 +4,15 @@ Created on 08-Jun-2025
 @author: sonyarani.dhara
 '''
 from base_pages.base_setup import BaseSetupSteps
+from utils.path_utils import readConfigFile  # Import utility class
+import os
 
+# Correct class implementation
 class LoginFunctionality(BaseSetupSteps):
-    def __init__(self, config_file=r"C:\Users\sonyarani.dhara\WorkingDrive\BitBucket\ctt-qa-automation\MyFirstProject\CTT_QA_Automation\configurations\config.json"):
-        super().__init__(config_file)  # Pass the config file correctly to parent class
+    def __init__(self):
+        config_file = readConfigFile.get_project_file_path("configurations/config.json")  # Use the utility method
+        super().__init__(config_file)
+
 
 # Instantiate the class to check if the constructor is called
 test = LoginFunctionality()
