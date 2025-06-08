@@ -1,0 +1,5 @@
+{
+    "browser": "chrome",
+    "driver_path": "C:/Users/sonyarani.dhara/WorkingDrive/BitBucket/ctt-qa-automation/myDrivers/chromedriver.exe",
+    "url": "https://development.d36z6oo50ky8dh.amplifyapp.com/login"
+}
