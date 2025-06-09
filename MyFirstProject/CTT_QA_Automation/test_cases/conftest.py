@@ -10,27 +10,22 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
 from utils.selenium_wrappers import SeleniumWrapper
-from utils.path_utils import readConfigFile
+# from utils.path_utils import readConfigFile
+from utils.read_properties import Read_Config
 
-@pytest.fixture(scope="session")
+
+@pytest.fixture(scope="function")
 def setup():
     
-    """Pytest fixture for setting up WebDriver using config.json."""
-    print("Test")
-    config_file = readConfigFile.get_project_file_path("configurations/config.json")
+    """Pytest fixture for setting up WebDriver using config.ini"""
 
-    try:
-        with open(config_file, "r") as file:
-            config = json.load(file)
-    except FileNotFoundError:
-        pytest.fail(f"Config file not found: {config_file}")
-    except json.JSONDecodeError:
-        pytest.fail(f"Invalid JSON format in config file: {config_file}")
-
-    browser_name = config.get("browser", "chrome").lower()
-    driver_path = config.get("driver_path", "")
-    url = config.get("url", "")
-
+    browser_name = Read_Config.get_browser_name()
+    #print(f"Resolved browser_name: {browser_name}")  # Debugging print
+    driver_path = Read_Config.get_chrome_driver_path()
+    #print(f"Resolved driver path: {driver_path}")  # Debugging print
+    url = Read_Config.get_ctt_page_url()
+    #print(f"Resolved url: {url}")  # Debugging print
+    
     if not url:
         pytest.fail("URL is missing in the configuration file.")
 

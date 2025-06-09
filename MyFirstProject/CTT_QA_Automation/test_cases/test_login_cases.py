@@ -6,20 +6,32 @@ Created on 08-Jun-2025
 
 import pytest
 from base_pages.login_page import LoginPage
+from utils.read_properties import Read_Config
 
-def test_login(setup): 
-    
-    """Test login functionality using fixture-injected WebDriver.""" 
-    assert setup is not None, "WebDriver instance was not passed to test function!"
-    print("WebDriver instance received successfully!")
-
-    # Instantiate LoginPage using the fixture
+def test_valid_login(setup): 
+    '''Verify login with correct credentials'''
     login_page = LoginPage(setup)  
-    login_page.login("aarushp123098@gmail.com", "OLOtx095")
+    login_page.enter_username(Read_Config.get_username())
+    login_page.enter_password(Read_Config.get_password())
+    login_page.click_login_button()
+  
+    
+def test_invaldvalid_login(setup): 
+    '''Attempt login with incorrect credentials'''
+    login_page = LoginPage(setup)  
+    login_page.enter_username(Read_Config.get_invalid_username())
+    login_page.enter_password(Read_Config.get_invalid_password())
+    login_page.click_login_button()
+
+def test_test_valid_credentials_invalid_password(setup): 
+    login_page = LoginPage(setup)  
+    login_page.enter_username(Read_Config.get_username())
+    login_page.enter_password(Read_Config.get_invalid_password())
+
+    login_page.click_login_button()
 
 
-# ✅ test_valid_login – Verify login with correct credentials
-# ✅ test_invalid_login – Attempt login with incorrect credentials
+
 # ✅ test_empty_credentials – Login attempt with blank username/password
 # ✅ test_login_with_locked_account – Verify behavior for locked user accounts
 # ✅ test_session_after_login – Ensure session management post-login

@@ -6,7 +6,7 @@ Created on 08-Jun-2025
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
+import time
 class SeleniumWrapper:
     """Wrapper class for common Selenium actions"""
 
@@ -19,7 +19,9 @@ class SeleniumWrapper:
             EC.presence_of_element_located((locator_type, locator_value))
         )
         element.clear()  # Clear any existing text
+        
         element.send_keys(text)
+        
 
     def click_element(self, locator_type, locator_value):
         """Click on an element"""
@@ -27,6 +29,9 @@ class SeleniumWrapper:
             EC.element_to_be_clickable((locator_type, locator_value))
         )
         element.click()
+        time.sleep(3)
+        
+        
 
     def wait_for_page_load(self, timeout):
         """Wait for page to fully load"""
