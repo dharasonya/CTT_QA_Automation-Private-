@@ -16,6 +16,7 @@ class LoginPage(PageFactory):
         self.username_locator = (By.ID, "username")
         self.password_locator = (By.ID, "password")
         self.login_button_locator = (By.CSS_SELECTOR, "button[type='button']")
+        self.login_user = (By.XPATH, "//*[contains(@class,'subtitle2')]")
         
     def enter_username(self, user):
         """Enter username in the field"""
@@ -28,8 +29,10 @@ class LoginPage(PageFactory):
     def click_login_button(self):
         """Click the login button"""
         self.wrapper.click_element(*self.login_button_locator)
-
-        
+    #
+    # def is_logged_in(self):
+    #     """Validate if login was successful"""
+    #     return "Dashboard" in self.login_user # ✅ Example: Check page title
 
       
     
