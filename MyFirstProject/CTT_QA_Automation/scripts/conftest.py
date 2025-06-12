@@ -1,51 +1,57 @@
+'''
+Created on 08-Jun-2025
+@author: sonyarani.dhara
+'''
+
 import pytest
-import time
+import json
+import time 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
 from utils.selenium_wrappers import SeleniumWrapper
-from utils.read_properties import Read_Config
+from utils.read_properties import Read_Config  # ✅ Ensure correct import
 
-@pytest.fixture(scope="function")
-def setup():
-    """Pytest fixture for setting up WebDriver using config.ini"""
+# def pytest_addoption(parser):
+#     """Pytest command-line options"""
+#     print("✅ Routed to Conftest", flush=True)  # ✅ Debugging print
+#
+#     parser.addoption("--env", action="store", help="Environment URL for tests")
+#     parser.addoption("--username", action="store", help="Login Username")
+#     parser.addoption("--password", action="store", help="Login Password")
+#     parser.addoption("--browser", action="store", help="Browser Type (chrome/firefox/edge)")
 
-    driver = get_driver()  # Use the Flask-accessible WebDriver function
+def setup(browser_name, driver_path, url, username, password):
+    """Initialize WebDriver, launch browser, and navigate to the environment URL"""
+    print("url : ",url)
+    selected_env="https://development.d36z6oo50ky8dh.amplifyapp.com/login"
+    print("** Launching Browser Setup ***")
+    print(f"✅ Flask Inputs - driver_path: {driver_path}")
+    print(f"✅ Flask Inputs - Environment: {url}")
+    print(f"✅ Flask Inputs - Username: {username}")
+    print(f"✅ Flask Inputs - Password: {password}")
+    print(f"✅ Flask Inputs - Browser: {browser_name}")
 
-    # Initialize SeleniumWrapper with WebDriver instance
-    wrapper = SeleniumWrapper(driver)
-    wrapper.wait_for_page_load(10)
+    # ✅ Mapping browser names to WebDriver services dynamically
+    browser_services = {
+        "chrome": (Service, webdriver.Chrome),
+        "firefox": (FirefoxService, webdriver.Firefox),
+        "edge": (EdgeService, webdriver.Edge)
+    }
 
-    yield driver  # ✅ Provide WebDriver instance directly
-
-    print("\nClosing browser session...")
-    driver.quit()
-
-def get_driver():
-    """Initialize and return a WebDriver instance for Flask"""
-    browser_name = Read_Config.get_browser_name()
-    driver_path = Read_Config.get_chrome_driver_path()
-    url = Read_Config.get_ctt_page_url()
-
-    if not url:
-        raise ValueError("URL is missing in the configuration file.")
-
-    # Setup WebDriver based on browser selection
-    driver = None
-    if browser_name == "chrome":
-        service = Service(driver_path)
-        driver = webdriver.Chrome(service=service)
-    elif browser_name == "firefox":
-        service = FirefoxService(driver_path)
-        driver = webdriver.Firefox(service=service)
-    elif browser_name == "edge":
-        service = EdgeService(driver_path)
-        driver = webdriver.Edge(service=service)
+    # ✅ Check if the selected browser exists in the dictionary
+    if browser_name.lower() in browser_services:
+        service_class, driver_class = browser_services[browser_name.lower()]
+        service = service_class(driver_path)
+        driver = driver_class(service=service)
     else:
-        raise ValueError(f"Unsupported browser: {browser_name}")
+        raise ValueError(f"⚠️ Error: Unsupported browser - {browser_name}")
 
+    # ✅ Maximize window and navigate to the correct environment URL
     driver.maximize_window()
     driver.get(url)
 
-    return driver  # ✅ Now accessible from Flask
+    print(f"✅ Browser launched successfully! Navigated to {url}", flush=True)
+
+    return driver, selected_env, username, password  # ✅ Return WebDriver & credentials

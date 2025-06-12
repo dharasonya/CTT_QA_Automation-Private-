@@ -1,35 +1,38 @@
-'''
-Created on 08-Jun-2025
-@author: sonyarani.dhara
-'''
 import pytest
-import json
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
 from utils.selenium_wrappers import SeleniumWrapper
-# from utils.path_utils import readConfigFile
 from utils.read_properties import Read_Config
-
 
 @pytest.fixture(scope="function")
 def setup():
-    
     """Pytest fixture for setting up WebDriver using config.ini"""
 
-    browser_name = Read_Config.get_browser_name()
-    #print(f"Resolved browser_name: {browser_name}")  # Debugging print
-    driver_path = Read_Config.get_chrome_driver_path()
-    #print(f"Resolved driver path: {driver_path}")  # Debugging print
-    url = Read_Config.get_ctt_page_url()
-    #print(f"Resolved url: {url}")  # Debugging print
-    
-    if not url:
-        pytest.fail("URL is missing in the configuration file.")
+    driver = get_driver()  # Use the Flask-accessible WebDriver function
 
-    # Setup WebDriver
+    # Initialize SeleniumWrapper with WebDriver instance
+    wrapper = SeleniumWrapper(driver)
+    wrapper.wait_for_page_load(10)
+
+    yield driver  # ✅ Provide WebDriver instance directly
+
+    print("\nClosing browser session...")
+    driver.quit()
+
+def get_driver():
+    """Initialize and return a WebDriver instance for Flask"""
+    browser_name = Read_Config.get_browser_name()
+    driver_path = Read_Config.get_chrome_driver_path()
+    url = Read_Config.get_ctt_page_url()
+
+    if not url:
+        raise ValueError("URL is missing in the configuration file.")
+
+    # Setup WebDriver based on browser selection
+    driver = None
     if browser_name == "chrome":
         service = Service(driver_path)
         driver = webdriver.Chrome(service=service)
@@ -40,16 +43,9 @@ def setup():
         service = EdgeService(driver_path)
         driver = webdriver.Edge(service=service)
     else:
-        pytest.fail(f"Unsupported browser: {browser_name}")
+        raise ValueError(f"Unsupported browser: {browser_name}")
 
     driver.maximize_window()
     driver.get(url)
 
-    # Initialize SeleniumWrapper instance
-    wrapper = SeleniumWrapper(driver)
-    wrapper.wait_for_page_load(10)  
-
-    yield driver  # ✅ Provide WebDriver instance to tests
-
-    print("\nClosing browser session...")
-    driver.quit()
+    return driver  # ✅ Now accessible from Flask
