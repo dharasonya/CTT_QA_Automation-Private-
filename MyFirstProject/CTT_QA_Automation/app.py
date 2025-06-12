@@ -1,70 +1,78 @@
 from flask import Flask, render_template, request
-import sys
-import inspect
-import subprocess
-from scripts.conftest import setup  # ✅ Import the WebDriver setup function
+import configparser
 import importlib
+import inspect
+import os
+from scripts.conftest import setup  # ✅ WebDriver setup function
 
 app = Flask(__name__)
 
+# ✅ Function to Load Configuration
+def load_config():
+    config = configparser.ConfigParser()
+    config.read(os.path.abspath(".\\configurations\\config.ini"))
+    return config
+
+config = load_config()
+
+# ✅ Function to Fetch Environment Mapping
+def get_environment_map():
+    if "ENVIRONMENT" in config:
+        return dict(config["ENVIRONMENT"])
+    else:
+        print("⚠️ Error: 'ENVIRONMENT' section not found in config.ini")
+        return {}
+
+environment_map = get_environment_map()
+
+# ✅ Function to Get Driver Path
+def get_driver_path():
+    if "ctt login info" in config:
+        return config["ctt login info"].get("chrome_driver_path", ".\\drivers\\chromedriver.exe")
+    else:
+        print("⚠️ Error: 'ctt login info' section not found in config.ini")
+        return ".\\drivers\\chromedriver.exe"
+
 @app.route('/')
 def index():
-    print("✅ Rendering Form Page", flush=True)  # ✅ Corrected Debugging
-    return render_template('form.html')  # ✅ Ensure `form.html` exists inside `templates/`
+    print("✅ Rendering Form Page", flush=True)
+    return render_template('form.html')
 
 @app.route('/automation', methods=['POST'])
 def run_automation():
     print(f"✅ Form data received: {request.form}", flush=True)
-    # print(f"✅ Form keys: {list(request.form.keys())}", flush=True)
 
-    # ✅ Environment mapping dictionary
-    environment_map = {
-        "development": "https://development.d36z6oo50ky8dh.amplifyapp.com/login",
-        "staging": "https://www.oranecrm.com/",
-        "production": "https://crm.orangemindz.in/admin/users/login"
-    }
-
-    # environment_map = {
-    #     "development": "https://development.d36z6oo50ky8dh.amplifyapp.com/login",
-    #     "staging": "https://staging.example.com/login",
-    #     "production": "https://production.example.com/login"
-    # }
-    
     # ✅ Retrieve inputs from the form
     script_name = request.form.get("script_name")
     username = request.form.get("username")
     password = request.form.get("password")
     environment = request.form.get("environment")
-    browser = request.form.get("browser")  # ✅ Capture browser selection
+    browser = request.form.get("browser")
 
-    # ✅ Get the mapped URL based on the selected environment
+    # ✅ Get environment URL
     environment_url = environment_map.get(environment, "⚠️ Invalid Environment")
+    driver_path = get_driver_path()
 
-    # ✅ Define driver path manually for now (you can retrieve it dynamically)
-    driver_path = "C:\\Users\\sonyarani.dhara\\WorkingDrive\\BitBucket\\ctt-qa-automation\\MyFirstProject\\CTT_QA_Automation\\drivers\\chromedriver.exe"
-    print(f"✅ Flask Mapped Environment: {environment} -> {environment_url}", flush=True)
-
+    print(f"✅ Selected Environment: {environment} -> {environment_url}")
     print(f"✅ Selected Script: {script_name}")
     print(f"✅ Username: {username}")
-    print(f"✅ Password: {password}")
-    print(f"✅ Environment: {environment_url}")
     print(f"✅ Browser: {browser}")
 
+    return execute_tests(script_name, browser, driver_path, environment_url, username, password)
+
+# ✅ Function to Execute Tests
+def execute_tests(script_name, browser, driver_path, environment_url, username, password):
     module_name = f'scripts.{script_name}'
 
     try:
-        # ✅ Import the selected test script dynamically
         test_module = importlib.import_module(module_name)
 
-        # ✅ Pick up functions starting with "test_" (modify if needed)
         selenium_functions = [
             func for func, _ in inspect.getmembers(test_module, inspect.isfunction)
             if func.startswith("test_")
         ]
 
-        # ✅ Print selected test cases before execution
         print(f"✅ Test cases picked from {module_name}: {selenium_functions}", flush=True)
-
 
         results = []
 
@@ -73,18 +81,12 @@ def run_automation():
             args = inspect.signature(func).parameters
 
             setup_driver = setup(browser, driver_path, environment_url, username, password)
-            # setup_driver, username, password = setup(browser, driver_path, environment_url, username, password)
-            # print("--type---",type(setup_driver))  # Check what setup_driver contains  
+
             try:
-                if "setup" in args:
-                    result = func(setup_driver)  # ✅ Pass fresh WebDriver instance
-                else:
-                    result = func()
+                result = func(setup_driver) if "setup" in args else func()
             finally:
                 if setup_driver:
                     print(f"✅ Closing browser session for {func_name}...")
-                    # setup_driver.quit()  # ✅ Close WebDriver after executing the test
-
             results.append(f"{func_name}: {result}")
 
         return "<br>".join(results)
@@ -94,9 +96,8 @@ def run_automation():
 
     except Exception as e:
         print(f"⚠️ Exception occurred: {e}", flush=True)
-        return f"⚠️ An error occurred: {str(e)}", 500  # ✅ Return error properly
+        return f"⚠️ An error occurred: {str(e)}", 500
 
-
-# '''Starting_Point''''
+# ✅ Start Flask Server
 if __name__ == "__main__":
-    app.run(debug=True, port=8082)  
+    app.run(debug=True, port=8084)

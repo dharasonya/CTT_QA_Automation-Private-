@@ -22,7 +22,7 @@ def test_valid_login_1(setup):
 
 def test_valid_username_invalid_password(setup):
     """Verify login with correct credentials"""
-    print("f,called case--1",flush=True)
+    print("f,called case--2",flush=True)
     driver, selected_env, username, password = setup  # ✅ Ensure correct unpacking
 
     login_page = LoginPage(driver)  # ✅ Use WebDriver instance
