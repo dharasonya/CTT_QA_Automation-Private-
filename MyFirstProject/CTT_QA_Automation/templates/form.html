@@ -3,6 +3,20 @@
 <head>
     <title>Run Selenium Automation</title>
     <link rel="stylesheet" type="text/css" href="../static/styles.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
+	<script>
+	    $(document).ready(function() {
+	        $('.searchable-dropdown').select2({
+	            placeholder: "Select a test suite",
+	            allowClear: true
+	        });
+	    });
+	</script>
+
 </head>
 <body>
     <div class="container">
@@ -17,18 +31,30 @@
                     <td><label for="password">Enter Password:</label></td>
                     <td><input type="password" id="password" name="password" required></td>
                 </tr>
-                <tr> 
+                <!--<tr> 
                     <td><label for="script_name">Run Regression Suite : </label></td>
                     <td>
                         <select id="script_name" name="script_name">
                             <option value="test_login_suite">CTT Login Functionality-(Regression Suite)</option>
                         </select>
                     </td>
-                </tr>
+                </tr>-->
+				<tr>
+				    <td><label for="script_name">Run Regression Suite:</label></td>
+				    <td>
+				        <select id="script_name" name="script_name" class="searchable-dropdown">
+				            <option value="test_login_suite">CTT Login Functionality</option>
+				            <option value="test_signup_suite">CTT Signup Functionality</option>
+				            <option value="test_checkout_suite">CTT Checkout Functionality</option>
+				        </select>
+				    </td>
+				</tr>
+
+
 				<tr>
 				    <td><label for="environment">Select Environment:</label></td>
 				    <td>
-				        <select id="environment" name="environment">
+				        <select id="environment" name="environment" class="searchable-dropdown">
 				            <option value="development">development</option>
 				            <option value="staging">staging</option>
 				            <option value="production">production</option>
@@ -38,7 +64,7 @@
 				<tr>
 				    <td><label for="browser">Choose Browser:</label></td>
 				    <td>
-				        <select id="browser" name="browser">
+				        <select id="browser" name="browser" class="searchable-dropdown">
 				            <option value="chrome">Chrome</option>
 				            <option value="edge">Ede</option>
 				            <option value="firefox">FireFox</option>
