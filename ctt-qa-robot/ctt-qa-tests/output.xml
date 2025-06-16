@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T18:40:06.779983" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login Suite" source="C:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\francescas\test_login_suite.robot">
+<test id="s1-t1" name="CTT Dashboard Validation" line="30">
+<kw name="Test CTT Login" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:07.481304" level="INFO">"Test Start"</msg>
+<arg>"Test Start"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:07.481179" elapsed="0.000176"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:07.481612" level="INFO">"Received URL: https://development.d36z6oo50ky8dh.amplifyapp.com/login"</msg>
+<arg>"Received URL: ${ENV_URL}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:07.481490" elapsed="0.000162"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:07.481862" level="INFO">"Received Username: sonyadhara@gmail.com"</msg>
+<arg>"Received Username: ${USERNAME}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:07.481763" elapsed="0.000134"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:07.482075" level="INFO">"Received Password: p6uZ8zAv"</msg>
+<arg>"Received Password: ${PASSWORD}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:07.481988" elapsed="0.000116"/>
+</kw>
+<kw name="Login Content Transformation Tool" owner="ctt_login">
+<kw name="Open Content Transformation Tool" owner="ctt_login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-06-16T18:40:07.483155" level="INFO">Opening browser 'Chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
+<arg>${CTT_BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-06-16T18:40:07.482958" elapsed="1.360594"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-06-16T18:40:08.843742" elapsed="0.061322"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CTT_LOGIN_PAGE_VIEW}</arg>
+<arg>timeout=${LONG_WAIT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-16T18:40:08.905346" elapsed="0.071008"/>
+</kw>
+<arg>${CTT_BASE_URL}</arg>
+<status status="PASS" start="2025-06-16T18:40:07.482516" elapsed="1.494000"/>
+</kw>
+<kw name="Perform CTT Login" owner="ctt_login">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-06-16T18:40:08.977375" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'id= username'.</msg>
+<arg>${CTT_LOGIN_USERNAME_PATH}</arg>
+<arg>${USER_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-16T18:40:08.977189" elapsed="0.204657"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-06-16T18:40:09.182595" level="INFO">Typing password into text field 'id= password'.</msg>
+<msg time="2025-06-16T18:40:09.219800" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${CTT_LOGIN_PASSWORD_PATH}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-16T18:40:09.182188" elapsed="0.108588"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-06-16T18:40:09.291172" level="INFO">Clicking button 'css= button[type='button']'.</msg>
+<arg>${CTT_LOGIN_SUBMIT_ELEMENT_PATH}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-06-16T18:40:09.290971" elapsed="0.163542"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGGED_IN_TEXT}</arg>
+<arg>timeout=${LONG_WAIT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-06-16T18:40:09.454700" elapsed="0.877444"/>
+</kw>
+<arg>${USER_NAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-06-16T18:40:08.976833" elapsed="1.355460"/>
+</kw>
+<arg>${ENV_URL}</arg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2025-06-16T18:40:07.482239" elapsed="2.850145"/>
+</kw>
+<status status="PASS" start="2025-06-16T18:40:07.480358" elapsed="2.852120"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:10.333018" level="INFO">"Test Start-CASE 1"</msg>
+<arg>"Test Start-CASE 1"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:10.332866" elapsed="0.000196"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:10.333552" level="INFO">"Received Environment URL: https://development.d36z6oo50ky8dh.amplifyapp.com/login"</msg>
+<arg>"Received Environment URL: ${ENV_URL}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:10.333308" elapsed="0.000289"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:10.334037" level="INFO">"Received Username: sonyadhara@gmail.com"</msg>
+<arg>"Received Username: ${USERNAME}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:10.333779" elapsed="0.000725"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T18:40:10.335163" level="INFO">"Received Password: p6uZ8zAv"</msg>
+<arg>"Received Password: ${PASSWORD}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T18:40:10.334864" elapsed="0.000393"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-16T18:40:10.335662" elapsed="2.156653"/>
+</kw>
+<status status="PASS" start="2025-06-16T18:40:07.479817" elapsed="5.012776"/>
+</test>
+<status status="PASS" start="2025-06-16T18:40:06.781359" elapsed="5.711892"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Login Suite" id="s1" pass="1" fail="0" skip="0">Test Login Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

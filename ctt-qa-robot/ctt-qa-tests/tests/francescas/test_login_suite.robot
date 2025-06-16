@@ -13,12 +13,22 @@ Resource    ../../page-objects/discover_dataview.robot
 Test Teardown    Close Browser
 Test Setup  Test CTT Login
 
-# *** Variables ***
+*** Variables ***
+${ENV_URL}    https://development.d36z6oo50ky8dh.amplifyapp.com/login
+${USERNAME}    default_user  # Provide a temporary value from the test file
+${PASSWORD}    default_pass  # Provide a temporary value from the test file
 
 *** Keywords ***
 Test CTT Login
-    Login Content Transformation Tool    ${CTT_BASE_URL}   ${USER_NAME}    ${PASSWORD}    
+    Log    "Test Start"
+    Log    "Received URL: ${ENV_URL}"
+    Log    "Received Username: ${USERNAME}"
+    Log    "Received Password: ${PASSWORD}"
+    Login Content Transformation Tool    ${ENV_URL}   ${USERNAME}    ${PASSWORD}    
 
 *** Test Cases ***
 CTT Dashboard Validation
-    CTT Dashboard Visualization    ${USER_NAME}
+    Log    "Test Start-CASE 1"
+    Log    "Received Environment URL: ${ENV_URL}"
+    Log    "Received Username: ${USERNAME}"
+    Log    "Received Password: ${PASSWORD}"

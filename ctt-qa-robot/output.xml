@@ -1,373 +1,280 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-15T19:33:02.076200" rpa="false" schemaversion="5">
-<suite id="s1" name="test login assignProject" source="c:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\francescas\test_login_assignProject.robot">
-<test id="s1-t1" name="CTT Project Assignment" line="24">
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T16:19:59.588592" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login Suite" source="c:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\francescas\test_login_suite.robot">
+<test id="s1-t1" name="CTT Dashboard Validation" line="31">
 <kw name="Test CTT Login" type="SETUP">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T16:20:00.455427" level="INFO">"Test Start"</msg>
+<arg>"Test Start"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T16:20:00.455137" elapsed="0.002891"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T16:20:00.458778" level="INFO">"Received URL: https://development.d36z6oo50ky8dh.amplifyapp.com/login"</msg>
+<arg>"Received URL: ${CTT_BASE_URL}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T16:20:00.458428" elapsed="0.000565"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T16:20:00.459473" level="INFO">"Received Username: default_user"</msg>
+<arg>"Received Username: ${USERNAME}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T16:20:00.459211" elapsed="0.000382"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-06-16T16:20:00.459917" level="INFO">"Received Password: default_pass"</msg>
+<arg>"Received Password: ${PASSWORD}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-06-16T16:20:00.459745" elapsed="0.000318"/>
+</kw>
 <kw name="Login Content Transformation Tool" owner="ctt_login">
 <kw name="Open Content Transformation Tool" owner="ctt_login">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:03.255445" level="INFO">Opening browser 'Chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
+<msg time="2025-06-16T16:20:00.461416" level="INFO">Opening browser 'Chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
 <arg>${CTT_BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-15T19:33:03.255053" elapsed="1.831856"/>
+<status status="PASS" start="2025-06-16T16:20:00.461151" elapsed="1.558759"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-15T19:33:05.087387" elapsed="0.110632"/>
+<status status="PASS" start="2025-06-16T16:20:02.020519" elapsed="0.092224"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CTT_LOGIN_PAGE_VIEW}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:05.198557" elapsed="0.091554"/>
+<status status="PASS" start="2025-06-16T16:20:02.113238" elapsed="0.078800"/>
 </kw>
 <arg>${CTT_BASE_URL}</arg>
-<status status="PASS" start="2025-06-15T19:33:03.254007" elapsed="2.036509"/>
+<status status="PASS" start="2025-06-16T16:20:00.460810" elapsed="1.731464"/>
 </kw>
 <kw name="Perform CTT Login" owner="ctt_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:05.292297" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'id= username'.</msg>
+<msg time="2025-06-16T16:20:02.193283" level="INFO">Typing text 'default_user' into text field 'id= username'.</msg>
 <arg>${CTT_LOGIN_USERNAME_PATH}</arg>
 <arg>${USER_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:05.291782" elapsed="0.373584"/>
+<status status="PASS" start="2025-06-16T16:20:02.192980" elapsed="0.261025"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:05.667884" level="INFO">Typing password into text field 'id= password'.</msg>
-<msg time="2025-06-15T19:33:05.772449" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-16T16:20:02.455103" level="INFO">Typing password into text field 'id= password'.</msg>
+<msg time="2025-06-16T16:20:02.501470" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${CTT_LOGIN_PASSWORD_PATH}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:05.666397" elapsed="0.342365"/>
+<status status="PASS" start="2025-06-16T16:20:02.454497" elapsed="0.130709"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:06.009749" level="INFO">Clicking button 'css= button[type='button']'.</msg>
+<msg time="2025-06-16T16:20:02.586033" level="INFO">Clicking button 'css= button[type='button']'.</msg>
+<msg time="2025-06-16T16:20:03.858721" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-98.png"&gt;&lt;img src="selenium-screenshot-98.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-16T16:20:03.859063" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+  (Session info: chrome=137.0.7151.104)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff78057fe75+79173]
+	GetHandleVerifier [0x0x7ff78057fed0+79264]
+	(No symbol) [0x0x7ff780339e5a]
+	(No symbol) [0x0x7ff780398599]
+	(No symbol) [0x0x7ff780395f32]
+	(No symbol) [0x0x7ff780392f71]
+	(No symbol) [0x0x7ff780391e61]
+	(No symbol) [0x0x7ff780383464]
+	(No symbol) [0x0x7ff7803b896a]
+	(No symbol) [0x0x7ff780382d16]
+	(No symbol) [0x0x7ff7803b8b80]
+	(No symbol) [0x0x7ff7803e100d]
+	(No symbol) [0x0x7ff7803b8743]
+	(No symbol) [0x0x7ff7803814c1]
+	(No symbol) [0x0x7ff780382253]
+	GetHandleVerifier [0x0x7ff78084a2ad+3004797]
+	GetHandleVerifier [0x0x7ff7808446fd+2981325]
+	GetHandleVerifier [0x0x7ff780863350+3107360]
+	GetHandleVerifier [0x0x7ff78059a9fe+188622]
+	GetHandleVerifier [0x0x7ff7805a228f+219487]
+	GetHandleVerifier [0x0x7ff780588dc4+115860]
+	GetHandleVerifier [0x0x7ff780588f79+116297]
+	GetHandleVerifier [0x0x7ff78056f528+11256]
+	(No symbol) [0x0x7ffc71cee8d7]
+	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
+</msg>
 <arg>${CTT_LOGIN_SUBMIT_ELEMENT_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:06.009234" elapsed="0.375998"/>
+<status status="FAIL" start="2025-06-16T16:20:02.585615" elapsed="1.278092">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+  (Session info: chrome=137.0.7151.104)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff78057fe75+79173]
+	GetHandleVerifier [0x0x7ff78057fed0+79264]
+	(No symbol) [0x0x7ff780339e5a]
+	(No symbol) [0x0x7ff780398599]
+	(No symbol) [0x0x7ff780395f32]
+	(No symbol) [0x0x7ff780392f71]
+	(No symbol) [0x0x7ff780391e61]
+	(No symbol) [0x0x7ff780383464]
+	(No symbol) [0x0x7ff7803b896a]
+	(No symbol) [0x0x7ff780382d16]
+	(No symbol) [0x0x7ff7803b8b80]
+	(No symbol) [0x0x7ff7803e100d]
+	(No symbol) [0x0x7ff7803b8743]
+	(No symbol) [0x0x7ff7803814c1]
+	(No symbol) [0x0x7ff780382253]
+	GetHandleVerifier [0x0x7ff78084a2ad+3004797]
+	GetHandleVerifier [0x0x7ff7808446fd+2981325]
+	GetHandleVerifier [0x0x7ff780863350+3107360]
+	GetHandleVerifier [0x0x7ff78059a9fe+188622]
+	GetHandleVerifier [0x0x7ff7805a228f+219487]
+	GetHandleVerifier [0x0x7ff780588dc4+115860]
+	GetHandleVerifier [0x0x7ff780588f79+116297]
+	GetHandleVerifier [0x0x7ff78056f528+11256]
+	(No symbol) [0x0x7ffc71cee8d7]
+	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
+</status>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGGED_IN_TEXT}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:06.385684" elapsed="2.064966"/>
+<status status="NOT RUN" start="2025-06-16T16:20:03.864048" elapsed="0.000116"/>
 </kw>
 <arg>${USER_NAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-06-15T19:33:05.290978" elapsed="3.160156"/>
+<status status="FAIL" start="2025-06-16T16:20:02.192540" elapsed="1.671815">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+  (Session info: chrome=137.0.7151.104)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff78057fe75+79173]
+	GetHandleVerifier [0x0x7ff78057fed0+79264]
+	(No symbol) [0x0x7ff780339e5a]
+	(No symbol) [0x0x7ff780398599]
+	(No symbol) [0x0x7ff780395f32]
+	(No symbol) [0x0x7ff780392f71]
+	(No symbol) [0x0x7ff780391e61]
+	(No symbol) [0x0x7ff780383464]
+	(No symbol) [0x0x7ff7803b896a]
+	(No symbol) [0x0x7ff780382d16]
+	(No symbol) [0x0x7ff7803b8b80]
+	(No symbol) [0x0x7ff7803e100d]
+	(No symbol) [0x0x7ff7803b8743]
+	(No symbol) [0x0x7ff7803814c1]
+	(No symbol) [0x0x7ff780382253]
+	GetHandleVerifier [0x0x7ff78084a2ad+3004797]
+	GetHandleVerifier [0x0x7ff7808446fd+2981325]
+	GetHandleVerifier [0x0x7ff780863350+3107360]
+	GetHandleVerifier [0x0x7ff78059a9fe+188622]
+	GetHandleVerifier [0x0x7ff7805a228f+219487]
+	GetHandleVerifier [0x0x7ff780588dc4+115860]
+	GetHandleVerifier [0x0x7ff780588f79+116297]
+	GetHandleVerifier [0x0x7ff78056f528+11256]
+	(No symbol) [0x0x7ffc71cee8d7]
+	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
+</status>
 </kw>
 <arg>${CTT_BASE_URL}</arg>
 <arg>${USER_NAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-06-15T19:33:03.253377" elapsed="5.198040"/>
+<status status="FAIL" start="2025-06-16T16:20:00.460320" elapsed="3.404381">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+  (Session info: chrome=137.0.7151.104)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff78057fe75+79173]
+	GetHandleVerifier [0x0x7ff78057fed0+79264]
+	(No symbol) [0x0x7ff780339e5a]
+	(No symbol) [0x0x7ff780398599]
+	(No symbol) [0x0x7ff780395f32]
+	(No symbol) [0x0x7ff780392f71]
+	(No symbol) [0x0x7ff780391e61]
+	(No symbol) [0x0x7ff780383464]
+	(No symbol) [0x0x7ff7803b896a]
+	(No symbol) [0x0x7ff780382d16]
+	(No symbol) [0x0x7ff7803b8b80]
+	(No symbol) [0x0x7ff7803e100d]
+	(No symbol) [0x0x7ff7803b8743]
+	(No symbol) [0x0x7ff7803814c1]
+	(No symbol) [0x0x7ff780382253]
+	GetHandleVerifier [0x0x7ff78084a2ad+3004797]
+	GetHandleVerifier [0x0x7ff7808446fd+2981325]
+	GetHandleVerifier [0x0x7ff780863350+3107360]
+	GetHandleVerifier [0x0x7ff78059a9fe+188622]
+	GetHandleVerifier [0x0x7ff7805a228f+219487]
+	GetHandleVerifier [0x0x7ff780588dc4+115860]
+	GetHandleVerifier [0x0x7ff780588f79+116297]
+	GetHandleVerifier [0x0x7ff78056f528+11256]
+	(No symbol) [0x0x7ffc71cee8d7]
+	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
+</status>
 </kw>
-<status status="PASS" start="2025-06-15T19:33:03.252334" elapsed="5.199428"/>
+<status status="FAIL" start="2025-06-16T16:20:00.454111" elapsed="3.410764">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+  (Session info: chrome=137.0.7151.104)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff78057fe75+79173]
+	GetHandleVerifier [0x0x7ff78057fed0+79264]
+	(No symbol) [0x0x7ff780339e5a]
+	(No symbol) [0x0x7ff780398599]
+	(No symbol) [0x0x7ff780395f32]
+	(No symbol) [0x0x7ff780392f71]
+	(No symbol) [0x0x7ff780391e61]
+	(No symbol) [0x0x7ff780383464]
+	(No symbol) [0x0x7ff7803b896a]
+	(No symbol) [0x0x7ff780382d16]
+	(No symbol) [0x0x7ff7803b8b80]
+	(No symbol) [0x0x7ff7803e100d]
+	(No symbol) [0x0x7ff7803b8743]
+	(No symbol) [0x0x7ff7803814c1]
+	(No symbol) [0x0x7ff780382253]
+	GetHandleVerifier [0x0x7ff78084a2ad+3004797]
+	GetHandleVerifier [0x0x7ff7808446fd+2981325]
+	GetHandleVerifier [0x0x7ff780863350+3107360]
+	GetHandleVerifier [0x0x7ff78059a9fe+188622]
+	GetHandleVerifier [0x0x7ff7805a228f+219487]
+	GetHandleVerifier [0x0x7ff780588dc4+115860]
+	GetHandleVerifier [0x0x7ff780588f79+116297]
+	GetHandleVerifier [0x0x7ff78056f528+11256]
+	(No symbol) [0x0x7ffc71cee8d7]
+	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
+</status>
 </kw>
-<kw name="Go To Tab Projects" owner="ctt_tab_projects">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_TAB_PROJECTS}</arg>
-<arg>timeout=${LONG_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:08.454018" elapsed="0.083559"/>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-16T16:20:03.866275" elapsed="2.160777"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:08.539120" level="INFO">Clicking element 'xpath=//button[text()='Projects']'.</msg>
-<arg>${XPATH_TAB_PROJECTS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:08.538315" elapsed="0.332794"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_PROJECTS_TAB_VIEW}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:08.872025" elapsed="2.594591"/>
-</kw>
-<status status="PASS" start="2025-06-15T19:33:08.453043" elapsed="3.014064"/>
-</kw>
-<kw name="Create Project" owner="ctt_tab_projects">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:11.470359" level="INFO">Clicking element 'xpath=//*[@id="root"]/div[1]/div[2]/main/div[2]/div[1]/div[2]/button[1][text()='Create Project']'.</msg>
-<arg>${XPATH_CREATE_PROJECT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:11.469575" elapsed="0.721689"/>
-</kw>
-<status status="PASS" start="2025-06-15T19:33:11.468602" elapsed="0.723116"/>
-</kw>
-<kw name="Assign and Complete Project Assignment" owner="ctt_tab_projects">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:12.195219" level="INFO">Typing text 'Test Project 1128' into text field 'id=Namecreate-user'.</msg>
-<arg>${XPATH_ENTER_NAME}</arg>
-<arg>${CREATE_PROJECT_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:12.194499" elapsed="0.644929"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:12.840966" level="INFO">Typing text 'Test Project Auto' into text field 'id=Descriptioncreate-user'.</msg>
-<arg>${XPATH_ENTER_CLIENT_DESCRIPTION}</arg>
-<arg>${CLIENT_DESCRIPTION}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:12.840140" elapsed="0.426648"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:13.268447" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'name=ProjectLead'.</msg>
-<arg>${XPATH_ENTER_PROJECT_LEAD}</arg>
-<arg>${PROJECT_LEAD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:13.267653" elapsed="0.508177"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_SELECT_PROJECT_LEAD}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:13.776930" elapsed="0.077571"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:13.855841" level="INFO">Clicking element 'xpath=//*[@id='undefinedcreate-user-listbox']'.</msg>
-<arg>${XPATH_SELECT_PROJECT_LEAD}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:13.855187" elapsed="0.219219"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:14.076224" level="INFO">Typing text 'Test Auto Suite' into text field 'name=ProjectGroup'.</msg>
-<arg>${XPATH_ENTER_PROJECT_GROUP}</arg>
-<arg>${PROJECT_GROUP}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:14.075223" elapsed="0.486929"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:14.563344" level="INFO">Typing text 'TEST' into text field 'name=Domain'.</msg>
-<arg>${XPATH_ENTER_DOMAIN}</arg>
-<arg>${DOMAIN}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:14.562693" elapsed="0.379540"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_SELECT_DOMAIN}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:14.942935" elapsed="0.041232"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:14.987160" level="INFO">Clicking element 'xpath=//*[@id='undefinedcreate-user-listbox']'.</msg>
-<arg>${XPATH_SELECT_DOMAIN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:14.985982" elapsed="0.240777"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:15.228143" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[3]/div/div[2]/button[2]'.</msg>
-<arg>${XPATH_SAVE_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:15.227431" elapsed="0.226406"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>timeout=${LONG_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:15.454476" elapsed="0.554245"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-06-15T19:33:16.009996" level="INFO">xpath=//div[@role='alert']/div</msg>
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-15T19:33:16.009388" elapsed="0.000923"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:16.010738" elapsed="0.066677"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:16.143906" level="INFO">${XPATH_ON_SAVE_MSG} = Project Created Successfully</msg>
-<var>${XPATH_ON_SAVE_MSG}</var>
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:16.078146" elapsed="0.066321"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted On Save Message: ${XPATH_ON_SAVE_MSG}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:16.145264" elapsed="0.001644"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>Project Created Successfully</arg>
-<arg>"Save action failed: Unexpected message variation!"</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-06-15T19:33:16.147664" elapsed="0.001015"/>
-</kw>
-<arg>${CREATE_PROJECT_NAME}</arg>
-<arg>${CLIENT_DESCRIPTION}</arg>
-<arg>${PROJECT_LEAD}</arg>
-<arg>${PROJECT_GROUP}</arg>
-<arg>${DOMAIN}</arg>
-<status status="PASS" start="2025-06-15T19:33:12.192984" elapsed="3.957366"/>
-</kw>
-<kw name="Go To Tab Home" owner="ctt_tab_home">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>timeout=${LONG_WAIT}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:16.155887" elapsed="3.518647"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:19.676054" level="INFO">Clicking element 'xpath=//button[text()='Home']'.</msg>
-<arg>${XPATH_TAB_HOME}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:19.675368" elapsed="1.012011"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_TAB_HOME_VIEW}</arg>
-<arg>timeout=${SHORT_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-15T19:33:20.687959" elapsed="1.056534"/>
-</kw>
-<status status="PASS" start="2025-06-15T19:33:16.154300" elapsed="5.590630"/>
-</kw>
-<kw name="View Created Project" owner="ctt_tab_home">
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
-<arg>Projects</arg>
-<arg>timeout=${LONG_WAIT}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2025-06-15T19:33:21.748522" elapsed="0.072188"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted On Project Group Name: ${PROJECT_GROUP}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:21.821403" elapsed="0.001446"/>
-</kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:21.884426" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c657ce38587c8f7a86435e0cad9cc7c9", element="f.DAD480B76E40F4AC484D56E458A3723D.d.360FD36ED485C9C5814096AD7DDED3E1.e.275")&gt;, &lt;selenium.webdri...</msg>
-<var>${elements}</var>
-<arg>${XPATH_ON_CLICK_PROJECT_GROUP}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:21.823879" elapsed="0.061144"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:21.927932" level="INFO">${text} = Test Auto Suite</msg>
-<var>${text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:21.887498" elapsed="0.040948"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted Groups: ${text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:21.929143" elapsed="0.001710"/>
-</kw>
-<if>
-<branch type="IF" condition="'${text}' == '${PROJECT_GROUP}'">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:21.934426" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c657ce38587c8f7a86435e0cad9cc7c9", element="f.DAD480B76E40F4AC484D56E458A3723D.d.360FD36ED485C9C5814096AD7DDED3E1.e.275")&gt;'.</msg>
-<arg>${element}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:21.932779" elapsed="0.303189"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked on matching element: ${text}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:22.236701" elapsed="0.001528"/>
-</kw>
-<break>
-<status status="PASS" start="2025-06-15T19:33:22.238797" elapsed="0.000442"/>
-</break>
-<status status="PASS" start="2025-06-15T19:33:21.931559" elapsed="0.308106"/>
-</branch>
-<status status="PASS" start="2025-06-15T19:33:21.931445" elapsed="0.308591"/>
-</if>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c657ce38587c8f7a86435e0cad9cc7c9", element="f.DAD480B76E40F4AC484D56E458A3723D.d.360FD36ED485C9C5814096AD7DDED3E1.e.275")&gt;</var>
-<status status="PASS" start="2025-06-15T19:33:21.886484" elapsed="0.353705"/>
-</iter>
-<var>${element}</var>
-<value>@{elements}</value>
-<status status="PASS" start="2025-06-15T19:33:21.885468" elapsed="0.355083"/>
-</for>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted On Project Name: ${CREATE_PROJECT_NAME}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:22.241149" elapsed="0.001405"/>
-</kw>
-<kw name="Get WebElements" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:34.765629" level="INFO">${elements} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c657ce38587c8f7a86435e0cad9cc7c9", element="f.DAD480B76E40F4AC484D56E458A3723D.d.360FD36ED485C9C5814096AD7DDED3E1.e.279")&gt;, &lt;selenium.webdri...</msg>
-<var>${elements}</var>
-<arg>${XPATH_OPEN_PROJECTS}</arg>
-<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:22.243221" elapsed="12.522817"/>
-</kw>
-<for flavor="IN">
-<iter>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:43.442356" level="INFO">${text} = Test Project 1128 1</msg>
-<var>${text}</var>
-<arg>${element}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:34.767570" elapsed="8.675299"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2025-06-15T19:33:43.444922" level="INFO">${project_parts} = ['Test Project 1128', '1']</msg>
-<var>${project_parts}</var>
-<arg>str('${text}').rsplit(" ", 1)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2025-06-15T19:33:43.443932" elapsed="0.001348"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2025-06-15T19:33:43.446491" level="INFO">${final_name} = Test Project 1128</msg>
-<var>${final_name}</var>
-<arg>${project_parts}[0]</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2025-06-15T19:33:43.445771" elapsed="0.001009"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted Projects Text: ${final_name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:43.447321" elapsed="0.001040"/>
-</kw>
-<if>
-<branch type="IF" condition="'${final_name}' == '${CREATE_PROJECT_NAME}'">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-15T19:33:43.450820" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="c657ce38587c8f7a86435e0cad9cc7c9", element="f.DAD480B76E40F4AC484D56E458A3723D.d.360FD36ED485C9C5814096AD7DDED3E1.e.279")&gt;'.</msg>
-<arg>${element}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-15T19:33:43.450010" elapsed="1.316657"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Clicked on matching element: ${final_name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-15T19:33:44.767315" elapsed="0.001669"/>
-</kw>
-<break>
-<status status="PASS" start="2025-06-15T19:33:44.769379" elapsed="0.000391"/>
-</break>
-<status status="PASS" start="2025-06-15T19:33:43.448818" elapsed="1.321610"/>
-</branch>
-<status status="PASS" start="2025-06-15T19:33:43.448744" elapsed="1.322044"/>
-</if>
-<var name="${element}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c657ce38587c8f7a86435e0cad9cc7c9", element="f.DAD480B76E40F4AC484D56E458A3723D.d.360FD36ED485C9C5814096AD7DDED3E1.e.279")&gt;</var>
-<status status="PASS" start="2025-06-15T19:33:34.767082" elapsed="10.003963"/>
-</iter>
-<var>${element}</var>
-<value>@{elements}</value>
-<status status="PASS" start="2025-06-15T19:33:34.766363" elapsed="10.006567"/>
-</for>
-<arg>${PROJECT_GROUP}</arg>
-<arg>${CREATE_PROJECT_NAME}</arg>
-<status status="PASS" start="2025-06-15T19:33:21.746510" elapsed="23.027681"/>
-</kw>
-<status status="PASS" start="2025-06-15T19:33:03.251000" elapsed="41.525284"/>
+<status status="FAIL" start="2025-06-16T16:20:00.453123" elapsed="5.575656">Setup failed:
+ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+  (Session info: chrome=137.0.7151.104)
+Stacktrace:
+	GetHandleVerifier [0x0x7ff78057fe75+79173]
+	GetHandleVerifier [0x0x7ff78057fed0+79264]
+	(No symbol) [0x0x7ff780339e5a]
+	(No symbol) [0x0x7ff780398599]
+	(No symbol) [0x0x7ff780395f32]
+	(No symbol) [0x0x7ff780392f71]
+	(No symbol) [0x0x7ff780391e61]
+	(No symbol) [0x0x7ff780383464]
+	(No symbol) [0x0x7ff7803b896a]
+	(No symbol) [0x0x7ff780382d16]
+	(No symbol) [0x0x7ff7803b8b80]
+	(No symbol) [0x0x7ff7803e100d]
+	(No symbol) [0x0x7ff7803b8743]
+	(No symbol) [0x0x7ff7803814c1]
+	(No symbol) [0x0x7ff780382253]
+	GetHandleVerifier [0x0x7ff78084a2ad+3004797]
+	GetHandleVerifier [0x0x7ff7808446fd+2981325]
+	GetHandleVerifier [0x0x7ff780863350+3107360]
+	GetHandleVerifier [0x0x7ff78059a9fe+188622]
+	GetHandleVerifier [0x0x7ff7805a228f+219487]
+	GetHandleVerifier [0x0x7ff780588dc4+115860]
+	GetHandleVerifier [0x0x7ff780588f79+116297]
+	GetHandleVerifier [0x0x7ff78056f528+11256]
+	(No symbol) [0x0x7ffc71cee8d7]
+	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
+</status>
 </test>
-<status status="PASS" start="2025-06-15T19:33:02.082960" elapsed="42.699483"/>
+<status status="FAIL" start="2025-06-16T16:19:59.593702" elapsed="6.441706"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="test login assignProject" id="s1" pass="1" fail="0" skip="0">test login assignProject</stat>
+<stat name="Test Login Suite" id="s1" pass="0" fail="1" skip="0">Test Login Suite</stat>
 </suite>
 </statistics>
 <errors>
