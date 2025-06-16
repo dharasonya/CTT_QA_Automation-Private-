@@ -1,230 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T18:46:12.154121" rpa="false" schemaversion="5">
-<suite id="s1" name="test login assignProject" source="C:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\francescas\test_login_assignProject.robot">
-<test id="s1-t1" name="CTT Project Assignment" line="24">
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T23:38:02.372534" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login Suite" source="C:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\ctt_test_suite\test_login_suite.robot">
+<test id="s1-t1" name="CTT Dashboard Validation" line="20">
 <kw name="Test CTT Login" type="SETUP">
 <kw name="Login Content Transformation Tool" owner="ctt_login">
 <kw name="Open Content Transformation Tool" owner="ctt_login">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:12.793715" level="INFO">Opening browser 'Chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
+<msg time="2025-06-16T23:38:02.589938" level="INFO">Opening browser 'chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
 <arg>${CTT_BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-16T18:46:12.793485" elapsed="1.422089"/>
+<status status="PASS" start="2025-06-16T23:38:02.589731" elapsed="1.546090"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-16T18:46:14.215828" elapsed="0.048489"/>
+<status status="PASS" start="2025-06-16T23:38:04.136045" elapsed="0.055603"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CTT_LOGIN_PAGE_VIEW}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:14.264677" elapsed="0.268552"/>
+<status status="PASS" start="2025-06-16T23:38:04.191939" elapsed="0.085320"/>
 </kw>
 <arg>${CTT_BASE_URL}</arg>
-<status status="PASS" start="2025-06-16T18:46:12.792759" elapsed="1.740573"/>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-06-16T23:38:02.589263" elapsed="1.688117"/>
 </kw>
 <kw name="Perform CTT Login" owner="ctt_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:14.533938" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'id= username'.</msg>
+<msg time="2025-06-16T23:38:04.278665" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'id= username'.</msg>
 <arg>${CTT_LOGIN_USERNAME_PATH}</arg>
 <arg>${USER_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:14.533773" elapsed="0.156967"/>
+<status status="PASS" start="2025-06-16T23:38:04.277886" elapsed="0.200658"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:14.691663" level="INFO">Typing password into text field 'id= password'.</msg>
-<msg time="2025-06-16T18:46:14.722305" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-16T23:38:04.479214" level="INFO">Typing password into text field 'id= password'.</msg>
+<msg time="2025-06-16T23:38:04.506732" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${CTT_LOGIN_PASSWORD_PATH}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:14.690966" elapsed="0.097368"/>
+<status status="PASS" start="2025-06-16T23:38:04.478859" elapsed="0.087743"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:14.788782" level="INFO">Clicking button 'css= button[type='button']'.</msg>
+<msg time="2025-06-16T23:38:04.566966" level="INFO">Clicking button 'css= button[type='button']'.</msg>
 <arg>${CTT_LOGIN_SUBMIT_ELEMENT_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:14.788560" elapsed="0.194970"/>
+<status status="PASS" start="2025-06-16T23:38:04.566772" elapsed="0.183281"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${LOGGED_IN_TEXT}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:14.983751" elapsed="0.926586"/>
+<status status="PASS" start="2025-06-16T23:38:04.750213" elapsed="1.369409"/>
 </kw>
 <arg>${USER_NAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-06-16T18:46:14.533501" elapsed="1.377126"/>
+<status status="PASS" start="2025-06-16T23:38:04.277557" elapsed="1.842209"/>
 </kw>
-<arg>${CTT_BASE_URL}</arg>
-<arg>${USER_NAME}</arg>
+<arg>${ENV_URL}</arg>
+<arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-06-16T18:46:12.792181" elapsed="3.118503"/>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-06-16T23:38:02.588965" elapsed="3.530874"/>
 </kw>
-<status status="PASS" start="2025-06-16T18:46:12.791698" elapsed="3.119041"/>
+<status status="PASS" start="2025-06-16T23:38:02.588661" elapsed="3.531249"/>
 </kw>
-<kw name="Go To Tab Projects" owner="ctt_tab_projects">
+<kw name="CTT Dashboard Visualization" owner="ctt_dashboard">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_TAB_PROJECTS}</arg>
+<arg>${LOGGED_IN_USER_XPATH}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:15.911462" elapsed="0.626125"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:16.538056" level="INFO">Clicking element 'xpath=//button[text()='Projects']'.</msg>
-<arg>${XPATH_TAB_PROJECTS}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:16.537802" elapsed="0.180802"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_PROJECTS_TAB_VIEW}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:16.718795" elapsed="1.940966"/>
-</kw>
-<status status="PASS" start="2025-06-16T18:46:15.911130" elapsed="2.748858"/>
-</kw>
-<kw name="Create Project" owner="ctt_tab_projects">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:18.660585" level="INFO">Clicking element 'xpath=//*[@id="root"]/div[1]/div[2]/main/div[2]/div[1]/div[2]/button[1][text()='Create Project']'.</msg>
-<arg>${XPATH_CREATE_PROJECT}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:18.660422" elapsed="0.443032"/>
-</kw>
-<status status="PASS" start="2025-06-16T18:46:18.660179" elapsed="0.443454"/>
-</kw>
-<kw name="Assign and Complete Project Assignment" owner="ctt_tab_projects">
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:19.105041" level="INFO">Typing text 'Test Project 1131' into text field 'id=Namecreate-user'.</msg>
-<arg>${XPATH_ENTER_NAME}</arg>
-<arg>${CREATE_PROJECT_NAME}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:19.104733" elapsed="0.463921"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:19.569081" level="INFO">Typing text 'Test Project Auto' into text field 'id=Descriptioncreate-user'.</msg>
-<arg>${XPATH_ENTER_CLIENT_DESCRIPTION}</arg>
-<arg>${CLIENT_DESCRIPTION}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:19.568852" elapsed="0.253497"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:19.822746" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'name=ProjectLead'.</msg>
-<arg>${XPATH_ENTER_PROJECT_LEAD}</arg>
-<arg>${PROJECT_LEAD}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:19.822532" elapsed="0.277938"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_SELECT_PROJECT_LEAD}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.100728" elapsed="0.022231"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:20.123319" level="INFO">Clicking element 'xpath=//*[@id='undefinedcreate-user-listbox']'.</msg>
-<arg>${XPATH_SELECT_PROJECT_LEAD}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.123131" elapsed="0.091564"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:20.215333" level="INFO">Typing text 'Test Auto Suite' into text field 'name=ProjectGroup'.</msg>
-<arg>${XPATH_ENTER_PROJECT_GROUP}</arg>
-<arg>${PROJECT_GROUP}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.215013" elapsed="0.236988"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:20.452587" level="INFO">Typing text 'TEST' into text field 'name=Domain'.</msg>
-<arg>${XPATH_ENTER_DOMAIN}</arg>
-<arg>${DOMAIN}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.452259" elapsed="0.171750"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_SELECT_DOMAIN}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.624194" elapsed="0.040726"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:20.665476" level="INFO">Clicking element 'xpath=//*[@id='undefinedcreate-user-listbox']'.</msg>
-<arg>${XPATH_SELECT_DOMAIN}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.665272" elapsed="0.100247"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:20.765930" level="INFO">Clicking element 'xpath=/html/body/div[4]/div[3]/div/div[2]/button[2]'.</msg>
-<arg>${XPATH_SAVE_BUTTON}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.765716" elapsed="0.093040"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>timeout=${LONG_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:20.859258" elapsed="0.327797"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-06-16T18:46:21.187380" level="INFO">xpath=//div[@role='alert']/div</msg>
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-16T18:46:21.187231" elapsed="0.000186"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>timeout=${MEDIUM_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T18:46:21.187526" elapsed="0.018910"/>
+<status status="PASS" start="2025-06-16T23:38:06.120485" elapsed="0.058312"/>
 </kw>
 <kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T18:46:21.233714" level="INFO">${XPATH_ON_SAVE_MSG} = Project with a similar name already exists.</msg>
-<var>${XPATH_ON_SAVE_MSG}</var>
-<arg>${XPATH_ON_SAVE_MSG}</arg>
+<msg time="2025-06-16T23:38:06.207473" level="INFO">${LOGGED_IN_USER_ID} = sonyadhara@gmail.com</msg>
+<var>${LOGGED_IN_USER_ID}</var>
+<arg>${LOGGED_IN_USER_XPATH}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T18:46:21.206611" elapsed="0.027156"/>
+<status status="PASS" start="2025-06-16T23:38:06.179008" elapsed="0.028506"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted On Save Message: ${XPATH_ON_SAVE_MSG}</arg>
+<arg>Extracted User ID: ${LOGGED_IN_USER_ID}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-16T18:46:21.233930" elapsed="0.000198"/>
+<status status="PASS" start="2025-06-16T23:38:06.207649" elapsed="0.000197"/>
 </kw>
 <kw name="Should Be Equal As Strings" owner="BuiltIn">
-<msg time="2025-06-16T18:46:21.234464" level="FAIL">"Save action failed: Unexpected message variation!": Project with a similar name already exists. != Project Created Successfully</msg>
-<arg>${XPATH_ON_SAVE_MSG}</arg>
-<arg>Project Created Successfully</arg>
-<arg>"Save action failed: Unexpected message variation!"</arg>
+<arg>${LOGGED_IN_USER_ID}</arg>
+<arg>${USER_NAME}</arg>
+<arg>"❌ Login failed: User ID mismatch!"</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="FAIL" start="2025-06-16T18:46:21.234253" elapsed="0.000333">"Save action failed: Unexpected message variation!": Project with a similar name already exists. != Project Created Successfully</status>
+<status status="PASS" start="2025-06-16T23:38:06.207945" elapsed="0.000177"/>
 </kw>
-<arg>${CREATE_PROJECT_NAME}</arg>
-<arg>${CLIENT_DESCRIPTION}</arg>
-<arg>${PROJECT_LEAD}</arg>
-<arg>${PROJECT_GROUP}</arg>
-<arg>${DOMAIN}</arg>
-<status status="FAIL" start="2025-06-16T18:46:19.103993" elapsed="2.130700">"Save action failed: Unexpected message variation!": Project with a similar name already exists. != Project Created Successfully</status>
+<arg>${USERNAME}</arg>
+<status status="PASS" start="2025-06-16T23:38:06.120127" elapsed="0.088055"/>
 </kw>
-<kw name="Go To Tab Home" owner="ctt_tab_home">
-<status status="NOT RUN" start="2025-06-16T18:46:21.234841" elapsed="0.000027"/>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-06-16T23:38:06.208312" elapsed="2.200360"/>
 </kw>
-<kw name="View Created Project" owner="ctt_tab_home">
-<arg>${PROJECT_GROUP}</arg>
-<arg>${CREATE_PROJECT_NAME}</arg>
-<status status="NOT RUN" start="2025-06-16T18:46:21.235074" elapsed="0.000021"/>
-</kw>
-<status status="FAIL" start="2025-06-16T18:46:12.791141" elapsed="8.444060">"Save action failed: Unexpected message variation!": Project with a similar name already exists. != Project Created Successfully</status>
+<status status="PASS" start="2025-06-16T23:38:02.588184" elapsed="5.820769"/>
 </test>
-<status status="FAIL" start="2025-06-16T18:46:12.155365" elapsed="9.080173"/>
+<status status="PASS" start="2025-06-16T23:38:02.373799" elapsed="6.036397"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="test login assignProject" id="s1" pass="0" fail="1" skip="0">test login assignProject</stat>
+<stat name="Test Login Suite" id="s1" pass="1" fail="0" skip="0">Test Login Suite</stat>
 </suite>
 </statistics>
 <errors>

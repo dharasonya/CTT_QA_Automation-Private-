@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T16:19:59.588592" rpa="false" schemaversion="5">
-<suite id="s1" name="Test Login Suite" source="c:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\francescas\test_login_suite.robot">
-<test id="s1-t1" name="CTT Dashboard Validation" line="31">
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T19:49:20.738596" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login Suite" source="c:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\ctt_test_suite\test_login_suite.robot">
+<test id="s1-t1" name="CTT Dashboard Validation" line="23">
 <kw name="Test CTT Login" type="SETUP">
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-06-16T16:20:00.455427" level="INFO">"Test Start"</msg>
+<msg time="2025-06-16T19:49:20.970198" level="INFO">"Test Start"</msg>
 <arg>"Test Start"</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-16T16:20:00.455137" elapsed="0.002891"/>
+<status status="PASS" start="2025-06-16T19:49:20.969977" elapsed="0.000812"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-06-16T16:20:00.458778" level="INFO">"Received URL: https://development.d36z6oo50ky8dh.amplifyapp.com/login"</msg>
-<arg>"Received URL: ${CTT_BASE_URL}"</arg>
+<msg time="2025-06-16T19:49:20.971296" level="INFO">"Received URL: https://development.d36z6oo50ky8dh.amplifyapp.com/login"</msg>
+<arg>"Received URL: ${ENV_URL}"</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-16T16:20:00.458428" elapsed="0.000565"/>
+<status status="PASS" start="2025-06-16T19:49:20.971001" elapsed="0.000445"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-06-16T16:20:00.459473" level="INFO">"Received Username: default_user"</msg>
+<msg time="2025-06-16T19:49:20.971739" level="INFO">"Received Username: default_user"</msg>
 <arg>"Received Username: ${USERNAME}"</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-16T16:20:00.459211" elapsed="0.000382"/>
+<status status="PASS" start="2025-06-16T19:49:20.971591" elapsed="0.000232"/>
 </kw>
 <kw name="Log" owner="BuiltIn">
-<msg time="2025-06-16T16:20:00.459917" level="INFO">"Received Password: default_pass"</msg>
+<msg time="2025-06-16T19:49:20.972194" level="INFO">"Received Password: default_pass"</msg>
 <arg>"Received Password: ${PASSWORD}"</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-06-16T16:20:00.459745" elapsed="0.000318"/>
+<status status="PASS" start="2025-06-16T19:49:20.971982" elapsed="0.000343"/>
 </kw>
 <kw name="Login Content Transformation Tool" owner="ctt_login">
 <kw name="Open Content Transformation Tool" owner="ctt_login">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-16T16:20:00.461416" level="INFO">Opening browser 'Chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
+<msg time="2025-06-16T19:49:20.973357" level="INFO">Opening browser 'Chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
 <arg>${CTT_BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-16T16:20:00.461151" elapsed="1.558759"/>
+<status status="PASS" start="2025-06-16T19:49:20.973137" elapsed="1.493525"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-16T16:20:02.020519" elapsed="0.092224"/>
+<status status="PASS" start="2025-06-16T19:49:22.467386" elapsed="0.051240"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CTT_LOGIN_PAGE_VIEW}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T16:20:02.113238" elapsed="0.078800"/>
+<status status="PASS" start="2025-06-16T19:49:22.519043" elapsed="0.280397"/>
 </kw>
 <arg>${CTT_BASE_URL}</arg>
-<status status="PASS" start="2025-06-16T16:20:00.460810" elapsed="1.731464"/>
+<status status="PASS" start="2025-06-16T19:49:20.972893" elapsed="1.827178"/>
 </kw>
 <kw name="Perform CTT Login" owner="ctt_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T16:20:02.193283" level="INFO">Typing text 'default_user' into text field 'id= username'.</msg>
+<msg time="2025-06-16T19:49:22.803447" level="INFO">Typing text 'default_user' into text field 'id= username'.</msg>
 <arg>${CTT_LOGIN_USERNAME_PATH}</arg>
 <arg>${USER_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T16:20:02.192980" elapsed="0.261025"/>
+<status status="PASS" start="2025-06-16T19:49:22.802101" elapsed="0.192717"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-16T16:20:02.455103" level="INFO">Typing password into text field 'id= password'.</msg>
-<msg time="2025-06-16T16:20:02.501470" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-16T19:49:22.995409" level="INFO">Typing password into text field 'id= password'.</msg>
+<msg time="2025-06-16T19:49:23.035192" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${CTT_LOGIN_PASSWORD_PATH}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T16:20:02.454497" elapsed="0.130709"/>
+<status status="PASS" start="2025-06-16T19:49:22.995087" elapsed="0.151620"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-16T16:20:02.586033" level="INFO">Clicking button 'css= button[type='button']'.</msg>
-<msg time="2025-06-16T16:20:03.858721" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-98.png"&gt;&lt;img src="selenium-screenshot-98.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-06-16T16:20:03.859063" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+<msg time="2025-06-16T19:49:23.147231" level="INFO">Clicking button 'css= button[type='button']'.</msg>
+<msg time="2025-06-16T19:49:24.427425" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-99.png"&gt;&lt;img src="selenium-screenshot-99.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-16T19:49:24.427736" level="FAIL">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
   (Session info: chrome=137.0.7151.104)
 Stacktrace:
 	GetHandleVerifier [0x0x7ff78057fe75+79173]
@@ -99,7 +99,7 @@ Stacktrace:
 </msg>
 <arg>${CTT_LOGIN_SUBMIT_ELEMENT_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="FAIL" start="2025-06-16T16:20:02.585615" elapsed="1.278092">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+<status status="FAIL" start="2025-06-16T19:49:23.146959" elapsed="1.286212">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
   (Session info: chrome=137.0.7151.104)
 Stacktrace:
 	GetHandleVerifier [0x0x7ff78057fe75+79173]
@@ -133,11 +133,11 @@ Stacktrace:
 <arg>${LOGGED_IN_TEXT}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="NOT RUN" start="2025-06-16T16:20:03.864048" elapsed="0.000116"/>
+<status status="NOT RUN" start="2025-06-16T19:49:24.433707" elapsed="0.000181"/>
 </kw>
 <arg>${USER_NAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2025-06-16T16:20:02.192540" elapsed="1.671815">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+<status status="FAIL" start="2025-06-16T19:49:22.800668" elapsed="1.633544">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
   (Session info: chrome=137.0.7151.104)
 Stacktrace:
 	GetHandleVerifier [0x0x7ff78057fe75+79173]
@@ -167,10 +167,10 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
 </status>
 </kw>
-<arg>${CTT_BASE_URL}</arg>
-<arg>${USER_NAME}</arg>
+<arg>${ENV_URL}</arg>
+<arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="FAIL" start="2025-06-16T16:20:00.460320" elapsed="3.404381">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+<status status="FAIL" start="2025-06-16T19:49:20.972537" elapsed="3.462263">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
   (Session info: chrome=137.0.7151.104)
 Stacktrace:
 	GetHandleVerifier [0x0x7ff78057fe75+79173]
@@ -200,7 +200,7 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
 </status>
 </kw>
-<status status="FAIL" start="2025-06-16T16:20:00.454111" elapsed="3.410764">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
+<status status="FAIL" start="2025-06-16T19:49:20.969163" elapsed="3.465892">ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
   (Session info: chrome=137.0.7151.104)
 Stacktrace:
 	GetHandleVerifier [0x0x7ff78057fe75+79173]
@@ -232,9 +232,9 @@ Stacktrace:
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-16T16:20:03.866275" elapsed="2.160777"/>
+<status status="PASS" start="2025-06-16T19:49:24.435894" elapsed="2.145633"/>
 </kw>
-<status status="FAIL" start="2025-06-16T16:20:00.453123" elapsed="5.575656">Setup failed:
+<status status="FAIL" start="2025-06-16T19:49:20.968274" elapsed="5.614633">Setup failed:
 ElementClickInterceptedException: Message: element click intercepted: Element &lt;button class="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary Mui-disabled MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-colorPrimary css-174amjn" tabindex="-1" type="button" disabled="" style="font-size: 14px; font-weight: bold; margin: 20px 0px 10px; height: 40px; width: 100%; color: rgb(255, 255, 255); background-color: gray; cursor: not-allowed;"&gt;...&lt;/button&gt; is not clickable at point (236, 469). Other element would receive the click: &lt;form&gt;...&lt;/form&gt;
   (Session info: chrome=137.0.7151.104)
 Stacktrace:
@@ -265,7 +265,7 @@ Stacktrace:
 	RtlUserThreadStart [0x0x7ffc72d1c5dc+44]
 </status>
 </test>
-<status status="FAIL" start="2025-06-16T16:19:59.593702" elapsed="6.441706"/>
+<status status="FAIL" start="2025-06-16T19:49:20.743728" elapsed="5.843831"/>
 </suite>
 <statistics>
 <total>
@@ -278,5 +278,6 @@ Stacktrace:
 </suite>
 </statistics>
 <errors>
+<msg time="2025-06-16T19:49:20.965397" level="ERROR">Error in file 'c:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\ctt_test_suite\test_login_suite.robot' on line 4: Resource file '..\francescas\ctt_env.robot' does not exist.</msg>
 </errors>
 </robot>
