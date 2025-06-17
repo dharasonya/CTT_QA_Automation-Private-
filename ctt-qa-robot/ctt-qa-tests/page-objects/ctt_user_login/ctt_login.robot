@@ -4,10 +4,8 @@ Documentation    This is a page object file, all the automation implementation r
 Resource    ../../resources/config.robot
 
 *** Variables ***
-#Native Login Element Path
-${NATIVE_LOGIN_LINK_ELEMENT_PATH}       xpath= //p[normalize-space()='Pivotree Control Tower Account']
 
-#Nativ Login Username, Password Boxes and Login submit Xpath
+#CTT Login Username, Password Boxes and Login submit Xpath
 
 ${CTT_LOGIN_PAGE_VIEW}               xpath= //h1[@class='css-17vm8mw']
 ${CTT_LOGIN_USERNAME_PATH}           id= username

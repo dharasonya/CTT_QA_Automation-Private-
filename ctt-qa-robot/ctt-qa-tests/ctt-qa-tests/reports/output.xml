@@ -1,116 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-16T23:38:02.372534" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3 (Python 3.13.4 on win32)" generated="2025-06-17T12:44:41.582221" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Login Suite" source="C:\Users\sonyarani.dhara\WorkingDrive\BitBucket\CTT_QA_Automation-Private-\ctt-qa-robot\ctt-qa-tests\tests\ctt_test_suite\test_login_suite.robot">
 <test id="s1-t1" name="CTT Dashboard Validation" line="20">
 <kw name="Test CTT Login" type="SETUP">
 <kw name="Login Content Transformation Tool" owner="ctt_login">
 <kw name="Open Content Transformation Tool" owner="ctt_login">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-06-16T23:38:02.589938" level="INFO">Opening browser 'chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
+<msg time="2025-06-17T12:44:42.100263" level="INFO">Opening browser 'chrome' to base url 'https://development.d36z6oo50ky8dh.amplifyapp.com/login'.</msg>
 <arg>${CTT_BASE_URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-06-16T23:38:02.589731" elapsed="1.546090"/>
+<status status="PASS" start="2025-06-17T12:44:42.099969" elapsed="1.666845"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-06-16T23:38:04.136045" elapsed="0.055603"/>
+<status status="PASS" start="2025-06-17T12:44:43.767037" elapsed="0.098876"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${CTT_LOGIN_PAGE_VIEW}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T23:38:04.191939" elapsed="0.085320"/>
+<status status="PASS" start="2025-06-17T12:44:43.866203" elapsed="0.300257"/>
 </kw>
 <arg>${CTT_BASE_URL}</arg>
 <arg>${BROWSER}</arg>
-<status status="PASS" start="2025-06-16T23:38:02.589263" elapsed="1.688117"/>
+<status status="PASS" start="2025-06-17T12:44:42.099301" elapsed="2.067305"/>
 </kw>
 <kw name="Perform CTT Login" owner="ctt_login">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T23:38:04.278665" level="INFO">Typing text 'sonyadhara@gmail.com' into text field 'id= username'.</msg>
+<msg time="2025-06-17T12:44:44.167533" level="INFO">Typing text 'sonya@gmail.com' into text field 'id= username'.</msg>
 <arg>${CTT_LOGIN_USERNAME_PATH}</arg>
 <arg>${USER_NAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T23:38:04.277886" elapsed="0.200658"/>
+<status status="PASS" start="2025-06-17T12:44:44.167258" elapsed="0.264318"/>
 </kw>
 <kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2025-06-16T23:38:04.479214" level="INFO">Typing password into text field 'id= password'.</msg>
-<msg time="2025-06-16T23:38:04.506732" level="INFO">Temporally setting log level to: NONE</msg>
+<msg time="2025-06-17T12:44:44.432263" level="INFO">Typing password into text field 'id= password'.</msg>
+<msg time="2025-06-17T12:44:44.480746" level="INFO">Temporally setting log level to: NONE</msg>
 <arg>${CTT_LOGIN_PASSWORD_PATH}</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T23:38:04.478859" elapsed="0.087743"/>
+<status status="PASS" start="2025-06-17T12:44:44.431949" elapsed="0.143481"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2025-06-16T23:38:04.566966" level="INFO">Clicking button 'css= button[type='button']'.</msg>
+<msg time="2025-06-17T12:44:44.575794" level="INFO">Clicking button 'css= button[type='button']'.</msg>
 <arg>${CTT_LOGIN_SUBMIT_ELEMENT_PATH}</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T23:38:04.566772" elapsed="0.183281"/>
+<status status="PASS" start="2025-06-17T12:44:44.575591" elapsed="0.271962"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2025-06-17T12:45:45.127137" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-06-17T12:45:45.127317" level="FAIL">Element 'xpath=//*[text()='Logged in as']' not visible after 1 minute.</msg>
 <arg>${LOGGED_IN_TEXT}</arg>
 <arg>timeout=${LONG_WAIT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T23:38:04.750213" elapsed="1.369409"/>
+<status status="FAIL" start="2025-06-17T12:44:44.847748" elapsed="60.283186">Element 'xpath=//*[text()='Logged in as']' not visible after 1 minute.</status>
 </kw>
 <arg>${USER_NAME}</arg>
 <arg>${PASSWORD}</arg>
-<status status="PASS" start="2025-06-16T23:38:04.277557" elapsed="1.842209"/>
+<status status="FAIL" start="2025-06-17T12:44:44.166849" elapsed="60.964247">Element 'xpath=//*[text()='Logged in as']' not visible after 1 minute.</status>
 </kw>
 <arg>${ENV_URL}</arg>
 <arg>${USERNAME}</arg>
 <arg>${PASSWORD}</arg>
 <arg>${BROWSER}</arg>
-<status status="PASS" start="2025-06-16T23:38:02.588965" elapsed="3.530874"/>
+<status status="FAIL" start="2025-06-17T12:44:42.098767" elapsed="63.032407">Element 'xpath=//*[text()='Logged in as']' not visible after 1 minute.</status>
 </kw>
-<status status="PASS" start="2025-06-16T23:38:02.588661" elapsed="3.531249"/>
-</kw>
-<kw name="CTT Dashboard Visualization" owner="ctt_dashboard">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${LOGGED_IN_USER_XPATH}</arg>
-<arg>timeout=${LONG_WAIT}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2025-06-16T23:38:06.120485" elapsed="0.058312"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2025-06-16T23:38:06.207473" level="INFO">${LOGGED_IN_USER_ID} = sonyadhara@gmail.com</msg>
-<var>${LOGGED_IN_USER_ID}</var>
-<arg>${LOGGED_IN_USER_XPATH}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-06-16T23:38:06.179008" elapsed="0.028506"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>Extracted User ID: ${LOGGED_IN_USER_ID}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2025-06-16T23:38:06.207649" elapsed="0.000197"/>
-</kw>
-<kw name="Should Be Equal As Strings" owner="BuiltIn">
-<arg>${LOGGED_IN_USER_ID}</arg>
-<arg>${USER_NAME}</arg>
-<arg>"❌ Login failed: User ID mismatch!"</arg>
-<doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" start="2025-06-16T23:38:06.207945" elapsed="0.000177"/>
-</kw>
-<arg>${USERNAME}</arg>
-<status status="PASS" start="2025-06-16T23:38:06.120127" elapsed="0.088055"/>
+<status status="FAIL" start="2025-06-17T12:44:42.097844" elapsed="63.033395">Element 'xpath=//*[text()='Logged in as']' not visible after 1 minute.</status>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-06-16T23:38:06.208312" elapsed="2.200360"/>
+<status status="PASS" start="2025-06-17T12:45:45.131444" elapsed="2.346291"/>
 </kw>
-<status status="PASS" start="2025-06-16T23:38:02.588184" elapsed="5.820769"/>
+<status status="FAIL" start="2025-06-17T12:44:42.097230" elapsed="65.380610">Setup failed:
+Element 'xpath=//*[text()='Logged in as']' not visible after 1 minute.</status>
 </test>
-<status status="PASS" start="2025-06-16T23:38:02.373799" elapsed="6.036397"/>
+<status status="FAIL" start="2025-06-17T12:44:41.583924" elapsed="65.894394"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test Login Suite" id="s1" pass="1" fail="0" skip="0">Test Login Suite</stat>
+<stat name="Test Login Suite" id="s1" pass="0" fail="1" skip="0">Test Login Suite</stat>
 </suite>
 </statistics>
 <errors>
